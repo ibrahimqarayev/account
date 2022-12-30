@@ -14,8 +14,8 @@
     <name>account-api</name>
     <description>account-api</description>
     <properties>
-        <java.version>11</java.version>
-        <kotlin-version>1.5.0-M2</kotlin-version>
+        <java.version>1.8</java.version>
+        <kotlin-version>1.8.0</kotlin-version>
     </properties>
     <dependencies>
         <dependency>
@@ -44,7 +44,6 @@
             <artifactId>kotlin-runtime</artifactId>
             <version>1.2.71</version>
         </dependency>
-        <!-- Runtime olan dependency ucun versionunu ozumuz yaziriq-->
 
         <dependency>
             <groupId>com.h2database</groupId>
