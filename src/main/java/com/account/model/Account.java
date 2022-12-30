@@ -26,6 +26,6 @@ public class Account {
     private Customer customer;
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
-    private Set<Transaction> transactions;
+    private Set<Transaction> transaction;
 
 }
