@@ -1,4 +1,4 @@
-package com.account.constrant;
+package com.account.constant;
 
 public enum TransactionType {
     INITIAL,
