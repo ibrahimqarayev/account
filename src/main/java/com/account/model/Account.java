@@ -20,7 +20,7 @@ public class Account {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    private String id;
+    private String id = "";
 
     private BigDecimal balance = BigDecimal.ZERO;
 
@@ -32,6 +32,12 @@ public class Account {
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
     private Set<Transaction> transaction;
+
+    public Account(Customer customer, BigDecimal initialCredit, LocalDateTime now) {
+        this.customer = customer;
+        this.balance = initialCredit;
+        this.creationDate = now;
+    }
 
     @Override
     public boolean equals(Object o) {
