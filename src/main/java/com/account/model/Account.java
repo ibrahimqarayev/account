@@ -1,8 +1,6 @@
 package com.account.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -31,13 +29,13 @@ public class Account {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
-    private Set<Transaction> transaction=new HashSet();
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Transaction> transaction = new HashSet();
 
-    public Account(Customer customer, BigDecimal initialCredit, LocalDateTime now) {
+    public Account(Customer customer,BigDecimal balance, LocalDateTime creationDate) {
         this.customer = customer;
-        this.balance = initialCredit;
-        this.creationDate = now;
+        this.balance = balance;
+        this.creationDate = creationDate;
     }
 
     @Override
@@ -48,8 +46,5 @@ public class Account {
         return Objects.equals(id, account.id) && Objects.equals(balance, account.balance) && Objects.equals(creationDate, account.creationDate) && Objects.equals(customer, account.customer) && Objects.equals(transaction, account.transaction);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, balance, creationDate, customer, transaction);
-    }
+
 }
