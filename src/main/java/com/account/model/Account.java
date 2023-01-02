@@ -8,6 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -31,7 +32,7 @@ public class Account {
     private Customer customer;
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
-    private Set<Transaction> transaction;
+    private Set<Transaction> transaction=new HashSet();
 
     public Account(Customer customer, BigDecimal initialCredit, LocalDateTime now) {
         this.customer = customer;
