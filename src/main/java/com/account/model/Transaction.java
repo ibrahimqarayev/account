@@ -1,9 +1,7 @@
 package com.account.model;
 
 import com.account.constant.TransactionType;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -22,14 +20,13 @@ public class Transaction {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
-    private TransactionType transactionType;
-//    private TransactionType transactionType = TransactionType.INITIAL;
+    private TransactionType transactionType = TransactionType.INITIAL;
 
     private BigDecimal amount;
 
     private LocalDateTime transactionDate;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "account_id", nullable = false)
     private Account account;
 
@@ -49,8 +46,6 @@ public class Transaction {
         return Objects.equals(id, that.id) && transactionType == that.transactionType && Objects.equals(amount, that.amount) && Objects.equals(transactionDate, that.transactionDate) && Objects.equals(account, that.account);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, transactionType, amount, transactionDate, account);
-    }
+
+
 }
