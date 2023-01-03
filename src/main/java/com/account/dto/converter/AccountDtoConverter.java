@@ -1,9 +1,13 @@
 package com.account.dto.converter;
 
 import com.account.dto.AccountDto;
+import com.account.dto.CustomerAccountDto;
 import com.account.model.Account;
+import com.account.model.Customer;
+import com.account.model.Transaction;
 import org.springframework.stereotype.Component;
 
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -28,12 +32,13 @@ public class AccountDtoConverter {
                 customerDtoConverter.customerToAccountCustomerDto(account.getCustomer()),
                 account.getTransaction()
                         .stream()
-                        .map(transaction -> transactionDtoConverter.transactionToTransactionDto(transaction))
+                        .map(transactionDtoConverter::transactionToTransactionDto)
                         .collect(Collectors.toSet())
         );
 
 
     }
+
 
 
 }
