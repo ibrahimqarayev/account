@@ -1,8 +1,8 @@
-package com.account.controller;
+package com.company.account.controller;
 
-import com.account.dto.AccountDto;
-import com.account.dto.CreateAccountRequest;
-import com.account.service.AccountService;
+import com.company.account.dto.AccountDto;
+import com.company.account.dto.request.CreateAccountRequest;
+import com.company.account.service.AccountService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
