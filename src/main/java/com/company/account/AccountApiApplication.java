@@ -1,7 +1,7 @@
-package com.account;
+package com.company.account;
 
-import com.account.model.Customer;
-import com.account.repository.CustomerRepository;
+import com.company.account.model.Customer;
+import com.company.account.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
