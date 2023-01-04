@@ -1,12 +1,12 @@
-package com.account.service;
+package com.company.account.service;
 
-import com.account.dto.AccountDto;
-import com.account.dto.CreateAccountRequest;
-import com.account.dto.converter.AccountDtoConverter;
-import com.account.model.Account;
-import com.account.model.Customer;
-import com.account.model.Transaction;
-import com.account.repository.AccountRepository;
+import com.company.account.dto.AccountDto;
+import com.company.account.dto.request.CreateAccountRequest;
+import com.company.account.dto.converter.AccountDtoConverter;
+import com.company.account.model.Account;
+import com.company.account.model.Customer;
+import com.company.account.model.Transaction;
+import com.company.account.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
