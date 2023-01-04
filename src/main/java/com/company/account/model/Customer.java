@@ -1,4 +1,4 @@
-package com.account.model;
+package com.company.account.model;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
