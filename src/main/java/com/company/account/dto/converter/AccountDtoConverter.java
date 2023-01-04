@@ -1,13 +1,9 @@
-package com.account.dto.converter;
+package com.company.account.dto.converter;
 
-import com.account.dto.AccountDto;
-import com.account.dto.CustomerAccountDto;
-import com.account.model.Account;
-import com.account.model.Customer;
-import com.account.model.Transaction;
+import com.company.account.dto.AccountDto;
+import com.company.account.model.Account;
 import org.springframework.stereotype.Component;
 
-import java.util.Set;
 import java.util.stream.Collectors;
 
 
