@@ -1,6 +1,6 @@
-package com.account.model;
+package com.company.account.model;
 
-import com.account.constant.TransactionType;
+import com.company.account.constant.TransactionType;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
