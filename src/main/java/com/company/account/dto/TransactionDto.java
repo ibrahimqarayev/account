@@ -1,6 +1,6 @@
-package com.account.dto;
+package com.company.account.dto;
 
-import com.account.constant.TransactionType;
+import com.company.account.constant.TransactionType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
