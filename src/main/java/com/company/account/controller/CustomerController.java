@@ -1,7 +1,7 @@
-package com.account.controller;
+package com.company.account.controller;
 
-import com.account.dto.CustomerDto;
-import com.account.service.CustomerService;
+import com.company.account.dto.CustomerDto;
+import com.company.account.service.CustomerService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
