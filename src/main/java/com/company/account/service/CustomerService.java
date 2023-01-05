@@ -1,10 +1,10 @@
-package com.account.service;
+package com.company.account.service;
 
-import com.account.dto.CustomerDto;
-import com.account.dto.converter.CustomerDtoConverter;
-import com.account.exception.CustomerNotFoundException;
-import com.account.model.Customer;
-import com.account.repository.CustomerRepository;
+import com.company.account.dto.CustomerDto;
+import com.company.account.dto.converter.CustomerDtoConverter;
+import com.company.account.exception.CustomerNotFoundException;
+import com.company.account.model.Customer;
+import com.company.account.repository.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 @Service
