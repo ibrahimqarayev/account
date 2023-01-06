@@ -13,5 +13,6 @@ public class CustomerServiceTest {
     @BeforeEach
     void setUp() {
         customerRepository = Mockito.mock(CustomerRepository.class);
+        customerDtoConverter = Mockito.mock(CustomerDtoConverter.class);
     }
 }
