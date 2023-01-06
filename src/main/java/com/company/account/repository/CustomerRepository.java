@@ -1,6 +1,6 @@
-package com.account.repository;
+package com.company.account.repository;
 
-import com.account.model.Customer;
+import com.company.account.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
