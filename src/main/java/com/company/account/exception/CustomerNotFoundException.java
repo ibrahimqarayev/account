@@ -1,4 +1,4 @@
-package com.account.exception;
+package com.company.account.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
