@@ -41,5 +41,18 @@ public class CustomerServiceTest {
                 () -> customerService.findCustomerById("id"));
     }
 
+    @Test
+    public void testGetCustomerById_whenCustomerIdExists_shouldReturnCustomer() {
+        Customer customer = new Customer("id", "name", "surname", Set.of());
+        CustomerDto customerDto = new CustomerDto("id", "name", "surname", Set.of());
+
+        Mockito.when(customerRepository.findById("id")).thenReturn(Optional.of(customer));
+        Mockito.when(converter.customerToCustomerDto(customer)).thenReturn(customerDto);
+
+        CustomerDto result = customerService.getCustomerById("id");
+        Assert.assertEquals(result, customerDto);
+    }
+
+
 
 }
