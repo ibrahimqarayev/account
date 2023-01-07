@@ -34,4 +34,12 @@ public class CustomerServiceTest {
         Assert.assertEquals(result, customer);
     }
 
+    @Test
+    public void testFindCustomerById_whenCustomerIdDoesNotExist_shouldThrowCustomerNotFoundException() {
+        Mockito.when(customerRepository.findById("id")).thenReturn(Optional.empty());
+        Assert.assertThrows(CustomerNotFoundException.class,
+                () -> customerService.findCustomerById("id"));
+    }
+
+
 }
