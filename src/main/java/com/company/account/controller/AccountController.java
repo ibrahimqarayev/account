@@ -21,6 +21,7 @@ public class AccountController {
         this.accountService = accountService;
     }
 
+
     @PostMapping
     public ResponseEntity<AccountDto> createAccount(@Valid @RequestBody CreateAccountRequest request) {
         return ResponseEntity.ok(accountService.createAccount(request));
