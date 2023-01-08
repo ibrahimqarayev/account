@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateAccountRequest {
+
     @NotBlank
     private String customerId;
     @Min(value = 0)
