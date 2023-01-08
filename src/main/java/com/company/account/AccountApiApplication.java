@@ -5,7 +5,9 @@ import com.company.account.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
+import java.time.Clock;
 import java.util.HashSet;
 
 
@@ -20,6 +22,11 @@ public class AccountApiApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(AccountApiApplication.class, args);
+    }
+
+    @Bean
+    public Clock clock() {
+        return Clock.systemUTC();
     }
 
 
