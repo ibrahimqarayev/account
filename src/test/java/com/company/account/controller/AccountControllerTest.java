@@ -1,5 +1,8 @@
 package com.company.account.controller;
 
+import com.company.account.dto.converter.AccountDtoConverter;
+import com.company.account.repository.AccountRepository;
+import com.company.account.service.CustomerService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -32,5 +35,12 @@ public class AccountControllerTest {
 
     @MockBean
     private Supplier<UUID> uuidSupplier;
+
+    @Autowired
+    private AccountRepository accountRepository;
+    @Autowired
+    private CustomerService customerService;
+    @Autowired
+    private AccountDtoConverter converter;
 
 }
