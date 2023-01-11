@@ -2,7 +2,9 @@ package com.company.account.controller;
 
 import com.company.account.dto.converter.AccountDtoConverter;
 import com.company.account.repository.AccountRepository;
+import com.company.account.service.AccountService;
 import com.company.account.service.CustomerService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,14 +19,26 @@ import java.time.Clock;
 import java.util.UUID;
 import java.util.function.Supplier;
 
+@RunWith(SpringRunner.class)
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, properties = {
         "server-port=0",
         "command.line.runner.enabled=false"
 })
-@RunWith(SpringRunner.class)
+
 @DirtiesContext
+/*
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(
+        webEnvironment = SpringBootTest.WebEnvironment.MOCK,
+        classes = Application.class)
+@AutoConfigureMockMvc
+@TestPropertySource(
+        locations = "classpath:application-integrationtest.properties")
+
+ */
 public class AccountControllerTest {
 
     @Autowired
@@ -42,5 +56,9 @@ public class AccountControllerTest {
     private CustomerService customerService;
     @Autowired
     private AccountDtoConverter converter;
+
+    private AccountService accountService = new AccountService(accountRepository, customerService, converter, clock, uuidSupplier);
+    private ObjectMapper mapper;
+    private static  final UUID uuid=UUID.randomUUID();
 
 }
