@@ -1,8 +1,8 @@
 package com.company.account.service;
 
 import com.company.account.dto.AccountDto;
-import com.company.account.dto.request.CreateAccountRequest;
 import com.company.account.dto.converter.AccountDtoConverter;
+import com.company.account.dto.request.CreateAccountRequest;
 import com.company.account.model.Account;
 import com.company.account.model.Customer;
 import com.company.account.model.Transaction;
@@ -10,11 +10,7 @@ import com.company.account.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.time.Clock;
-import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.UUID;
-import java.util.function.Supplier;
 
 @Service
 public class AccountService {
@@ -26,7 +22,7 @@ public class AccountService {
 
     public AccountService(AccountRepository accountRepository,
                           CustomerService customerService,
-                          AccountDtoConverter converter, Clock clock, Supplier<UUID> uuidSupplier) {
+                          AccountDtoConverter converter) {
         this.accountRepository = accountRepository;
         this.customerService = customerService;
         this.converter = converter;
