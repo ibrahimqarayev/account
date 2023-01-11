@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -23,6 +24,13 @@ public class Customer {
     @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
     private Set<Account> accounts;
 
+    public Customer(String name, String surname) {
+        this.id = "";
+        this.name = name;
+        this.surname = surname;
+        this.accounts = null;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -30,8 +38,6 @@ public class Customer {
         Customer customer = (Customer) o;
         return Objects.equals(id, customer.id) && Objects.equals(name, customer.name) && Objects.equals(surname, customer.surname) && Objects.equals(accounts, customer.accounts);
     }
-
-
 
 
 }
