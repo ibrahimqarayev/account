@@ -14,7 +14,7 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+../untitled/.idea
 *.iws
 *.iml
 *.ipr
@@ -46,7 +46,7 @@ build/
 .classpath
 .factorypath
 .gradle
-.idea
+../untitled/.idea
 .metadata
 .project
 .recommenders
