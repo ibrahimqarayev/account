@@ -10,6 +10,8 @@ import com.company.account.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.Clock;
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Service
@@ -18,14 +20,16 @@ public class AccountService {
     private final AccountRepository accountRepository;
     private final CustomerService customerService;
     private final AccountDtoConverter converter;
-
+    private final Clock clock;
 
     public AccountService(AccountRepository accountRepository,
                           CustomerService customerService,
-                          AccountDtoConverter converter) {
+                          AccountDtoConverter converter,
+                          Clock clock) {
         this.accountRepository = accountRepository;
         this.customerService = customerService;
         this.converter = converter;
+        this.clock = clock;
     }
 
     public AccountDto createAccount(CreateAccountRequest createAccountRequest) {
@@ -46,5 +50,11 @@ public class AccountService {
         return converter.accountToAccountDto(accountRepository.save(account));
     }
 
+    private LocalDateTime getLocalDateTimeNow() {
+        Instant instant = clock.instant();
+        return LocalDateTime.ofInstant(
+                instant,
+                Clock.systemDefaultZone().getZone());
+    }
 
 }
