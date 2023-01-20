@@ -22,4 +22,6 @@ public class TransactionDto {
 
     private LocalDateTime transactionDate;
 
+    public TransactionDto(String id, TransactionType initial, BigDecimal bigDecimal, LocalDateTime localDateTime) {
+    }
 }
